@@ -1,5 +1,3 @@
-package tbz.juliana;
-
 import java.util.Random;
 import java.util.Scanner;
 
