@@ -3,7 +3,7 @@ package tbz.juliana;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main {
+public class PasswordGenerator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("password generator");
