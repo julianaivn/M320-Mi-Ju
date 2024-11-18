@@ -6,6 +6,12 @@ public class Media {
     protected int year;
     protected double price;
 
+    public Media(String title, int year, double price) {
+        this.title = title;
+        this.year = year;
+        this.price = price;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -28,5 +34,12 @@ public class Media {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String toString() {
+        return "media " +
+                "\n title: " + title +
+                "\n year: " + year +
+                "\n price: " + price;
     }
 }

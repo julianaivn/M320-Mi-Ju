@@ -12,17 +12,13 @@ public class CD extends Media{
     }
 
     public CD(String title, int year, double price, String bandName) {
-        this.title = title;
-        this.year = year;
-        this.price = price;
+        super(title, year, price);
         this.bandName = bandName;
     }
 
     public String toString() {
         return "CD " +
-                "\n title: " + title +
-                "\n year: " + year +
-                "\n price: " + price +
+                super.toString() +
                 "\n band-name: " + bandName;
     }
 }
