@@ -12,8 +12,15 @@ public class DVD extends Media{
         this.movieLength = movieLength;
     }
 
+    public DVD(String title, int year, double price, int movieLength) {
+        this.title = title;
+        this.year = year;
+        this.price = price;
+        this.movieLength = movieLength;
+    }
+
     public String toString() {
-        return "Book " +
+        return "DVD " +
                 "\n title: " + title +
                 "\n year: " + year +
                 "\n price: " + price +

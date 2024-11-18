@@ -1,6 +1,6 @@
 package ch.tbz.m320.media;
 
-public class Books extends Media{
+public class Book extends Media{
     private long ISBN;
 
     public long getISBN() {
@@ -8,6 +8,13 @@ public class Books extends Media{
     }
 
     public void setISBN(long ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public Book(String title, int year, double price, long ISBN) {
+        this.title = title;
+        this.year = year;
+        this.price = price;
         this.ISBN = ISBN;
     }
 
