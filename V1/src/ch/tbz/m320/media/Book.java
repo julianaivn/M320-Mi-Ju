@@ -12,18 +12,14 @@ public class Book extends Media{
     }
 
     public Book(String title, int year, double price, long ISBN) {
-        this.title = title;
-        this.year = year;
-        this.price = price;
+        super(title, year, price);
         this.ISBN = ISBN;
     }
 
     @Override
     public String toString() {
         return "Book " +
-                "\n title: " + title +
-                "\n year: " + year +
-                "\n price: " + price +
+                super.toString() +
                 "\n ISBN: " + ISBN;
     }
 }
