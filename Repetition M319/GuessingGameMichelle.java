@@ -20,13 +20,11 @@ public class GuessingGame {
         int attempts = 0;
         boolean guessedCorrectly = false;
 
-        // Loop until max attempts reached or correct guess
         while (attempts < maxAttempts && !guessedCorrectly) {
             System.out.print("Enter your guess: ");
             int guess = scanner.nextInt();
             attempts++;
 
-            // Decision-making and calling another method to check the guess
             guessedCorrectly = checkGuess(guess);
 
             if (!guessedCorrectly) {
