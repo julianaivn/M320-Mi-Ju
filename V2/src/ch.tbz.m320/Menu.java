@@ -14,11 +14,11 @@ public class Menu {
 
         while (true) {
             System.out.println("\nSpieler erstellen:");
-            System.out.println("1: Set Goalie");
-            System.out.println("2: Add Angreifer");
-            System.out.println("3: Add Verteidiger");
-            System.out.println("4: Show current players");
-            System.out.println("5: Exit");
+            System.out.println("1: Goalie setzen");
+            System.out.println("2: Angreifer hinzufügen");
+            System.out.println("3: Verteidiger hinzufügen");
+            System.out.println("4: Aktuelle Spieler anzeigen");
+            System.out.println("5: Beenden");
             System.out.print("Wählen Sie die Option: ");
             String choice = scanner.nextLine();
 
