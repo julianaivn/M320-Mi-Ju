@@ -30,7 +30,7 @@ public class Mannschaft {
 
         // Goalie
         if (goalie != null) {
-            System.out.println("Goalie: " + goalie.spielen());
+            System.out.println("Goalie:" + goalie.spielen());
         } else {
             System.out.println("Goalie: Kein Spieler mit dieser Position vorhanden.");
         }
@@ -52,7 +52,7 @@ public class Mannschaft {
                 System.out.println("- " + verteidiger.spielen());
             }
         } else {
-            System.out.println("Kein Spieler mit dieser Position vorhanden.");
+            System.out.println("Verteidiger: Kein Spieler mit dieser Position vorhanden.");
         }
     }
 }
