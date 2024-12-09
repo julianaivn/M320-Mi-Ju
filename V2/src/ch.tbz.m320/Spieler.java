@@ -1,3 +1,5 @@
+package src.ch.tbz.m320;
+
 public class Spieler {
     protected String name;
 

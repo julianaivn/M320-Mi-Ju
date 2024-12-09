@@ -1,3 +1,5 @@
+package src.ch.tbz.m320;
+
 import java.util.ArrayList;
 
 public class Mannschaft {

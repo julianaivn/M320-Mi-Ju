@@ -1,3 +1,5 @@
+package src.ch.tbz.m320;
+
 public class Goalie extends Spieler {
     private double koerperGrosse;
 
