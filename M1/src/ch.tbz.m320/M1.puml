@@ -1,0 +1,20 @@
+@startuml
+set separator none
+package src.ch.tbz.m320 {
+    class Heizung{
+        - temperature : int
+        - min : int
+        - max : int
+        - increment : int
+        + Heizung(temperature : int, increment : int)
+        + Heizung(temperature : int, min : int, max : int, increment : int)
+        + Heizung()
+        + getters() : int
+        + setTemperature(temperature : int) : void
+        + setMin(min : int) : void
+        + setMax(max : int) : void
+        + setIncrement(increment : int) : void
+        + increaseTemperature() : void
+        + decreaseTemperature() : void
+    }
+@enduml
