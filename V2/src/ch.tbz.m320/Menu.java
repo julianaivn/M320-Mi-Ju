@@ -27,7 +27,7 @@ public class Menu {
                 String name = scanner.nextLine();
                 System.out.print("Körpergröße des Goalies: ");
                 double koerperGrosse = scanner.nextDouble();
-                scanner.nextLine(); // Consume leftover newline
+                scanner.nextLine();
                 Goalie goalie = new Goalie(name, koerperGrosse);
                 mannschaft.setGoalie(goalie);
                 System.out.println("Goalie wurde gesetzt.");
@@ -39,7 +39,7 @@ public class Menu {
                 while (true) {
                     System.out.print("Sturmnnummer des Angreifers (zwischen 1 und 16): ");
                     sturmNummer = scanner.nextInt();
-                    scanner.nextLine(); // Consume leftover newline
+                    scanner.nextLine();
                     if (sturmNummer >= 1 && sturmNummer <= 16) {
                         break;
                     } else {
@@ -57,7 +57,7 @@ public class Menu {
                 while (true) {
                     System.out.print("Verteidigungsnummer des Verteidigers (zwischen 1 und 4): ");
                     verteidigungNummer = scanner.nextInt();
-                    scanner.nextLine(); // Consume leftover newline
+                    scanner.nextLine();
                     if (verteidigungNummer >= 1 && verteidigungNummer <= 4) {
                         break;
                     } else {
