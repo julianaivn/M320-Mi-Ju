@@ -3,19 +3,57 @@ package src.ch.tbz.m320;
 import java.util.ArrayList;
 
 public class Mannschaft {
-    private ArrayList<Spieler> spielerListe;
+    private Goalie goalie;
+    private ArrayList<Angreifer> angreiferListe;
+    private ArrayList<Verteidiger> verteidigerListe;
 
     public Mannschaft() {
-        spielerListe = new ArrayList<>();
+        this.goalie = null; // Initially no Goalie
+        this.angreiferListe = new ArrayList<>();
+        this.verteidigerListe = new ArrayList<>();
     }
 
-    public void addSpieler(Spieler spieler) {
-        spielerListe.add(spieler);
+    public void setGoalie(Goalie goalie) {
+        this.goalie = goalie;
     }
 
-    public void showTeam() {
-        for (Spieler spieler : spielerListe) {
-            System.out.println(spieler.spielen());
+    public void addAngreifer(Angreifer angreifer) {
+        angreiferListe.add(angreifer);
+    }
+
+    public void addVerteidiger(Verteidiger verteidiger) {
+        verteidigerListe.add(verteidiger);
+    }
+
+    public void showPlayers() {
+        System.out.println("\nAktuelle Mannschaft:");
+
+        // Goalie
+        if (goalie != null) {
+            System.out.println("Goalie: " + goalie.spielen());
+        } else {
+            System.out.println("Goalie: No player with this position yet.");
+        }
+
+        // Angreifer
+        if (!angreiferListe.isEmpty()) {
+            System.out.println("Angreifer:");
+            for (Angreifer angreifer : angreiferListe) {
+                System.out.println("- " + angreifer.spielen());
+            }
+        } else {
+            System.out.println("Angreifer: No player with this position yet.");
+        }
+
+        // Verteidiger
+        if (!verteidigerListe.isEmpty()) {
+            System.out.println("Verteidiger:");
+            for (Verteidiger verteidiger : verteidigerListe) {
+                System.out.println("- " + verteidiger.spielen());
+            }
+        } else {
+            System.out.println("Verteidiger: No player with this position yet.");
         }
     }
 }
+
