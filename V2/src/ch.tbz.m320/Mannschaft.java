@@ -13,6 +13,7 @@ public class Mannschaft {
         this.verteidigerListe = new ArrayList<>();
     }
 
+
     public void setGoalie(Goalie goalie) {
         this.goalie = goalie;
     }
@@ -28,14 +29,14 @@ public class Mannschaft {
     public void showPlayers() {
         System.out.println("\nAktuelle Mannschaft:");
 
-        // Goalie
+        // Display Goalie
         if (goalie != null) {
-            System.out.println("Goalie:" + goalie.spielen());
+            System.out.println("Goalie: " + goalie.spielen());
         } else {
             System.out.println("Goalie: Kein Spieler mit dieser Position vorhanden.");
         }
 
-        // Angreifer
+        // Display Angreifer
         if (!angreiferListe.isEmpty()) {
             System.out.println("Angreifer:");
             for (Angreifer angreifer : angreiferListe) {
@@ -45,7 +46,7 @@ public class Mannschaft {
             System.out.println("Angreifer: Kein Spieler mit dieser Position vorhanden.");
         }
 
-        // Verteidiger
+        // Display Verteidiger
         if (!verteidigerListe.isEmpty()) {
             System.out.println("Verteidiger:");
             for (Verteidiger verteidiger : verteidigerListe) {
@@ -56,4 +57,3 @@ public class Mannschaft {
         }
     }
 }
-
