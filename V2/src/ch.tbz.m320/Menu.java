@@ -35,9 +35,17 @@ public class Menu {
             } else if (choice.equals("2")) {
                 System.out.print("Name des Angreifers: ");
                 String name = scanner.nextLine();
-                System.out.print("Sturmnnummer des Angreifers: ");
-                int sturmNummer = scanner.nextInt();
-                scanner.nextLine(); // Consume leftover newline
+                int sturmNummer;
+                while (true) {
+                    System.out.print("Sturmnnummer des Angreifers (zwischen 1 und 16): ");
+                    sturmNummer = scanner.nextInt();
+                    scanner.nextLine(); // Consume leftover newline
+                    if (sturmNummer >= 1 && sturmNummer <= 16) {
+                        break;
+                    } else {
+                        System.out.println("Ungültige Nummer. Bitte geben Sie eine Zahl zwischen 1 und 16 ein.");
+                    }
+                }
                 Angreifer angreifer = new Angreifer(name, sturmNummer);
                 mannschaft.addAngreifer(angreifer);
                 System.out.println("Angreifer wurde hinzugefügt.");
@@ -45,9 +53,17 @@ public class Menu {
             } else if (choice.equals("3")) {
                 System.out.print("Name des Verteidigers: ");
                 String name = scanner.nextLine();
-                System.out.print("Verteidigungsnummer des Verteidigers: ");
-                int verteidigungNummer = scanner.nextInt();
-                scanner.nextLine(); // Consume leftover newline
+                int verteidigungNummer;
+                while (true) {
+                    System.out.print("Verteidigungsnummer des Verteidigers (zwischen 1 und 4): ");
+                    verteidigungNummer = scanner.nextInt();
+                    scanner.nextLine(); // Consume leftover newline
+                    if (verteidigungNummer >= 1 && verteidigungNummer <= 4) {
+                        break;
+                    } else {
+                        System.out.println("Ungültige Nummer. Bitte geben Sie eine Zahl zwischen 1 und 4 ein.");
+                    }
+                }
                 Verteidiger verteidiger = new Verteidiger(name, verteidigungNummer);
                 mannschaft.addVerteidiger(verteidiger);
                 System.out.println("Verteidiger wurde hinzugefügt.");
