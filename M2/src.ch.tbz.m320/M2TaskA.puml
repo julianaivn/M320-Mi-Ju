@@ -1,11 +1,11 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+actor User
+actor System
 
-autonumber
-
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+User -> System : Select option to add a Goalie
+System -> User : Display input fields
+User -> System : Input Goalie's name and height
+System -> System : Create new Goalie instance
+System -> System : Assign Goalie to Mannschaft
+System -> User : Confirmation message
 @enduml
