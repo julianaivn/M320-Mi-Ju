@@ -1,0 +1,15 @@
+@startuml
+actor User
+actor System
+
+User -> System : Select option to display current players
+System -> System : Iterate through Mannschaft roles
+System -> System : Check if player exists for each role
+alt Player exists
+    System -> User : Display player details
+else No player exists
+    System -> User : Display "Kein Spieler mit dieser Position vorhanden"
+end
+@enduml
+
+//should displayed the flow between classes.
