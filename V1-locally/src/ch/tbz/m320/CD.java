@@ -1,6 +1,7 @@
-package ch.tbz.m320.media;
+package ch.tbz.m320;
 
-public class CD extends Media{
+
+public class CD extends Media {
     private String bandName;
 
     public String getBandName() {

@@ -1,10 +1,10 @@
-package ch.tbz.m320.media;
+package ch.tbz.m320;
 
-public class Media {
+public abstract class Media {
 
-    protected String title;
-    protected int year;
-    protected double price;
+    private String title;
+    private int year;
+    private double price;
 
     public Media(String title, int year, double price) {
         this.title = title;

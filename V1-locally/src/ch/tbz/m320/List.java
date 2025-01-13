@@ -1,10 +1,5 @@
 package ch.tbz.m320;
 
-import ch.tbz.m320.media.Media;
-import ch.tbz.m320.media.Book;
-import ch.tbz.m320.media.CD;
-import ch.tbz.m320.media.DVD;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 

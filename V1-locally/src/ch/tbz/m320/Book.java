@@ -1,6 +1,6 @@
-package ch.tbz.m320.media;
+package ch.tbz.m320;
 
-public class Book extends Media{
+public class Book extends Media {
     private long ISBN;
 
     public long getISBN() {

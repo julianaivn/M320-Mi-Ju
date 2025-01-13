@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="56cd40c4-f70e-4df8-b63e-342f66c14e0d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../D1/src/ch/tbz/m320/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V1/src/ch/tbz/m320/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V1-locally/src/ch/tbz/m320/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V1/src/ch/tbz/m320/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V1-locally/src/ch/tbz/m320/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V1/src/ch/tbz/m320/media/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V1-locally/src/ch/tbz/m320/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V1/src/ch/tbz/m320/media/CD.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V1-locally/src/ch/tbz/m320/CD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V1/src/ch/tbz/m320/media/DVD.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V1-locally/src/ch/tbz/m320/DVD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../V1/src/ch/tbz/m320/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/../V1-locally/src/ch/tbz/m320/Media.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2pLI9rTqMJEcEVjAQaRFVHQwGVw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56cd40c4-f70e-4df8-b63e-342f66c14e0d" name="Changes" comment="" />
+      <created>1732538826262</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732538826262</updated>
+      <workItem from="1732538827696" duration="3000" />
+    </task>
+    <servers />
+  </component>
+</project>

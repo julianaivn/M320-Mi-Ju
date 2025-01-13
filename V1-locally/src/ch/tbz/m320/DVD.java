@@ -1,6 +1,7 @@
-package ch.tbz.m320.media;
+package ch.tbz.m320;
 
-public class DVD extends Media{
+
+public class DVD extends Media {
 
     private int movieLength;
 
