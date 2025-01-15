@@ -1,23 +1,81 @@
 package m320;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         ArrayList<Student> students = createStudents();
 
         Class classA = new Class(students);
 
         for (Student student : students) {
-            System.out.println(student.getName() + "\nstudent avarage: " +student.studentAverage());
+            System.out.println(student.getName() + "\nstudent average: " + student.studentAverage());
             System.out.println();
         }
 
-        System.out.println("class avarage: " + classA.getAverage());
+        while (true) {
+            System.out.println("Class average: " + classA.getAverage());
+            System.out.println("1 - See students \n" +
+                    "2 - Add student \n" +
+                    "3 - Add test \n" +
+                    "4 - Exit");
+
+            switch (scanner.nextInt()) {
+                case (1) -> {
+                    for (Student student : students) {
+                        System.out.println(student.getName() + "\nstudent average: " + student.studentAverage());
+                        System.out.println();
+                    }
+                }
+                case (2) -> {
+                    scanner.nextLine();
+                    System.out.print("Enter the student's name: ");
+                    String name = scanner.nextLine();
+                    Student newStudent = new Student(name);
+
+                    System.out.println("Adding tests for the new student...");
+                    for (int i = 1; i <= 3; i++) {
+                        System.out.print("Enter points for test " + i + ": ");
+                        float points = scanner.nextFloat();
+                        System.out.print("Enter max points for test " + i + ": ");
+                        int maxPoints = scanner.nextInt();
+                        newStudent.addTest(new Test(points, maxPoints));
+                    }
+
+                    students.add(newStudent);
+                    classA = new Class(students);
+                    System.out.println("Student added successfully!");
+                }
+                case (3) -> {
+                    scanner.nextLine();
+
+                    System.out.print("Enter max points for the new test: ");
+                    int maxPoints = scanner.nextInt();
+
+                    System.out.println("now adding achieved points for each student");
+
+                    for (Student student : students) {
+                        System.out.println(student.getName());
+
+                        System.out.print("Enter points for the new test: ");
+                        float points = scanner.nextFloat();
+                        student.addTest(new Test(points, maxPoints));
+                    }
+                    System.out.println("Test added successfully!");
+                }
+                case (4) -> {
+                    System.out.println("Exiting...");
+                    scanner.close();
+                    System.exit(0);
+                }
+                default -> System.out.println("Invalid option. Please try again.");
+            }
+        }
     }
 
-    // Function to create default data
     private static ArrayList<Student> createStudents() {
         ArrayList<Student> students = new ArrayList<>();
 
@@ -28,7 +86,6 @@ public class Main {
         return students;
     }
 
-    // Function to add tests to a student
     private static Student addTests(Student student, float points1, float points2, float points3) {
         student.addTest(new Test(points1, 15));
         student.addTest(new Test(points2, 12));
