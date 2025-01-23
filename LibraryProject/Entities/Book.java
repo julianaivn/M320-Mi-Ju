@@ -28,4 +28,12 @@ public class Book {
     public boolean isAvailable() {
         return isAvailable;
     }
+
+    public void markBorrowed() {
+        isAvailable = false;
+    }
+
+    public void markReturned() {
+        isAvailable = true;
+    }
 }
