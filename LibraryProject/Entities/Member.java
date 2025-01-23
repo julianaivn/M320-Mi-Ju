@@ -11,4 +11,13 @@ public class Member extends Person {
         borrowedBooks = new ArrayList<>();
     }
 
+    public List<Book> getBorrowedBooks() {
+        return borrowedBooks;
+    }
+
+    public void borrowBook(Book book) {
+    }
+
+    public void returnBook(Book book) {
+    }
 }
