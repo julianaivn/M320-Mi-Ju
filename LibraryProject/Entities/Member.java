@@ -16,8 +16,14 @@ public class Member extends Person {
     }
 
     public void borrowBook(Book book) {
+        borrowedBooks.add(book);
+        book.markBorrowed();
+        System.out.println(getName() + " borrowed: " + book.getTitle());
     }
 
     public void returnBook(Book book) {
+        borrowedBooks.remove(book);
+        book.markReturned();
+        System.out.println(getName() + " returned: " + book.getTitle());
     }
 }
