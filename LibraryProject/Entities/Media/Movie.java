@@ -12,6 +12,17 @@ public class Movie extends Media{
         this.duration = duration;
     }
 
+    public Movie(){
+        super();
+    }
+
+    @Override
+    public String toString() {
+        return "Movie:\n" +
+                super.toString() +
+                "duration=" + duration;
+    }
+
     public int getDuration() {
         return duration;
     }
