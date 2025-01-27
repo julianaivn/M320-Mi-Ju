@@ -1,0 +1,31 @@
+@startuml
+
+interface Orderable {
+  +getOrderDetails(): String
+}
+
+abstract class Payment {
+  +processPayment(): void
+}
+
+class CoffeeOrder {
+  -coffeeType: String
+  -quantity: int
+  +getOrderDetails(): String
+  +addToOrder(coffeeType: String, quantity: int): void
+}
+
+class CreditCardPayment {
+  +processPayment(): void
+}
+
+class DebitCardPayment {
+  +processPayment(): void
+}
+
+CoffeeOrder --> Payment : "1..1 (HAS)"
+Orderable <.. CoffeeOrder
+Payment <-- CreditCardPayment
+Payment <-- DebitCardPayment
+
+@enduml
