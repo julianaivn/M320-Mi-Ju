@@ -43,7 +43,7 @@ public class Media implements Borrowable{
     @Override
     public String toString() {
         if(isAvailable){
-            return "mediaID: '" + mediaID + '\n' +
+            return "mediaID: " + mediaID + '\n' +
                     "title: " + title + '\n' +
                     "isAvailable: " + isAvailable + '\n';
         } else {

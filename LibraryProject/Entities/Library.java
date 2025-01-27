@@ -18,10 +18,6 @@ public class Library {
         this.medias = new ArrayList<>();
         this.members = new ArrayList<>();
     }
-    private Library(ArrayList<Media> media, ArrayList<Member> members) {
-        this.medias = media;
-        this.members = members;
-    }
 
     // Singleton Pattern
     public static Library getInstance() {

@@ -20,7 +20,7 @@ public class Movie extends Media{
     public String toString() {
         return "Movie:\n" +
                 super.toString() +
-                "duration=" + duration;
+                "duration=" + duration + "minutes";
     }
 
     public int getDuration() {

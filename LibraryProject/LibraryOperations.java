@@ -8,6 +8,7 @@ import Exceptions.MemberException;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LibraryOperations {
@@ -77,6 +78,13 @@ public class LibraryOperations {
         System.out.println("Member name:");
         Member member = findMemberByName(scanner.nextLine());
 
+        if(media == null){
+            throw new MediaAvailabilityException("media doesnt exist");
+        }
+        if(member == null){
+            throw new MemberException("person doesnt exist");
+        }
+
         System.out.println("borrowing media...");
         member.borrowMedia(media);
         System.out.println("success!");
@@ -96,7 +104,7 @@ public class LibraryOperations {
         }
 
     }
-    private void deleteMedia(){
+    public void deleteMedia(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("id of media you want to delete: ");
         Media media = findMediaByID(scanner.nextLine());
@@ -111,7 +119,7 @@ public class LibraryOperations {
         }
 
     }
-    private void returnMedia() throws MediaAvailabilityException, MemberException {
+    public void returnMedia() throws MediaAvailabilityException, MemberException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Title of the media you want to return: ");
         Media media = findMediaByName(scanner.nextLine());
@@ -128,7 +136,6 @@ public class LibraryOperations {
         member.returnMedia(media);
         System.out.println("success!");
     }
-
     private Media findMediaByName(String title) {
         Scanner scanner = new Scanner(System.in);
         Media foundMedia = library.getMedias().stream().filter(media -> media.getTitle().equals(title)).findFirst().orElse(null);
@@ -176,6 +183,53 @@ public class LibraryOperations {
     private Member findMemberByID(String id) {
         return library.getMembers().stream().filter(member -> member.getId().equals(id)).findFirst().orElse(null);
     }
+    public void setDefaultData() throws NoSuchAlgorithmException {
+        ArrayList<Media> media = new ArrayList<>();
+        ArrayList<Member> members = new ArrayList<>();
 
+        media.add(new Book(generateID(1), "magic book", true, null, null, "peter"));
+        media.add(new Book(generateID(media.size() + 1), "funny book", true, null, null, "steve"));
+        media.add(new Book(generateID(media.size() + 1), "silly book", true, null, null, "cristina"));
+        media.add(new Book(generateID(media.size() + 1), "The Hidden World", true, null, null, "John Doe"));
+        media.add(new Book(generateID(media.size() + 1), "Chronicles of Time", true, null, null, "Jane Austen"));
+        media.add(new Book(generateID(media.size() + 1), "Lunar Tales", true, null, null, "Isaac Newton"));
+        media.add(new Book(generateID(media.size() + 1), "Galaxy Quest", true, null, null, "Carl Sagan"));
+        media.add(new Book(generateID(media.size() + 1), "The Mystery Forest", true, null, null, "Agatha Christie"));
+        media.add(new Book(generateID(media.size() + 1), "Artificial Minds", true, null, null, "Alan Turing"));
+
+        media.add(new Movie(generateID(media.size() + 1), "super cool movie", true, null, null, 69));
+        media.add(new Movie(generateID(media.size() + 1), "best movie", true, null, null, 120));
+        media.add(new Movie(generateID(media.size() + 1), "cat movie", true, null, null, 360));
+        media.add(new Movie(generateID(media.size() + 1), "Time Travelers", true, null, null, 95));
+        media.add(new Movie(generateID(media.size() + 1), "Space Odyssey", true, null, null, 150));
+        media.add(new Movie(generateID(media.size() + 1), "The Robot's Revenge", true, null, null, 120));
+        media.add(new Movie(generateID(media.size() + 1), "The Endless Journey", true, null, null, 180));
+        media.add(new Movie(generateID(media.size() + 1), "Code of Destiny", true, null, null, 140));
+        media.add(new Movie(generateID(media.size() + 1), "Eclipse of the Heart", true, null, null, 110));
+
+        members.add(new Member("Alice", generateID(0)));
+        members.add(new Member("Bob", generateID(members.size() + 1)));
+        members.add(new Member("Charlie", generateID(members.size() + 1)));
+        members.add(new Member("Diana", generateID(members.size() + 1)));
+        members.add(new Member("Eve", generateID(members.size() + 1)));
+        members.add(new Member("Frank", generateID(members.size() + 1)));
+
+        library.setMedias(media);
+        library.setMembers(members);
+    }
+    public void seeAllMedia(){
+        System.out.println("========== ALL MEDIA ==========");
+        for (Media item : library.getMedias()) {
+            System.out.println(item.toString() + '\n');
+        }
+        System.out.println("===============================");
+    }
+    public void seeAllMembers(){
+        System.out.println("========= ALL MEMBERS =========");
+        for (Member item : library.getMembers()) {
+            System.out.println(item.toString());
+        }
+        System.out.println("===============================");
+    }
 
 }

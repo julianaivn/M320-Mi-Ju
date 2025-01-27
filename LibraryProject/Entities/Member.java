@@ -14,7 +14,7 @@ public class Member  {
     public Member(String name, String id) {
         this.name = name;
         this.id = id;
-        borrowedMedia = new ArrayList<>();
+        this.borrowedMedia = new ArrayList<>();
     }
 
     public Member(String id){
