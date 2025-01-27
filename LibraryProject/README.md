@@ -7,8 +7,8 @@ and delete not only members but media.
 
 Class diagrams
 
-In our class diagrams we can see a clear evolution since at the beginning, we were siding for only using books. Which
-at the end developed in not only books but movies too. We got rid of unnecessary classes and interfaces, like the class
+In our class diagrams we can see a clear evolution since at the beginning, we where planning to only have books available.
+Which at the end developed in not only books but movies too. We got rid of unnecessary classes and interfaces, like the class
 person, which was our first attempt of inheritance.
 
 Design Pattern
