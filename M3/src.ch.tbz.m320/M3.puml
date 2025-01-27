@@ -19,6 +19,10 @@ class CreditCardPayment {
   +processPayment(): void
 }
 
+class Postfinanz {
+  +processPayment(): void
+}
+
 class DebitCardPayment {
   +processPayment(): void
 }
@@ -27,5 +31,6 @@ CoffeeOrder --> Payment : "1..1 (HAS)"
 Orderable <.. CoffeeOrder
 Payment <-- CreditCardPayment
 Payment <-- DebitCardPayment
+Payment <-- Postfinanz
 
 @enduml
