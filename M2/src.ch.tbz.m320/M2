@@ -1,0 +1,53 @@
+Task a: General Use Case
+
+    Use Case Name: Add a Goalie to the Team
+
+    Description:
+    A player, specifically a Goalie, is added to the team.
+
+    Actors:
+    User: The person interacting with the program.
+    System: The program.
+
+    Preconditions:
+    The system is running, and the user is navigating through the menu.
+
+    Steps:
+    1- The user selects the option to add a Goalie via the menu.
+    2- The program prompts the user to input the Goalie's name and height.
+    3- The user prompts the variables required.
+    4- The system creates a new instance of the Goalie class using the provided data.
+    5- The system assigns the new Goalie to the Mannschaft.
+    5- The user receives confirmation that the Goalie has been successfully added.
+
+    Postconditions:
+    The Goalie is stored in the Mannschaft and can later be displayed as part of the team.
+
+    Sequence diagram: M2TaskA.puml
+
+Task b: Specialized Use Case
+
+    Use Case Name: Display Current Team Players
+
+    Description:
+    Display of all players currently assigned to the Mannschaft. It also handles cases where some roles have not been
+    assigned yet. The program informs the user of unfilled positions.
+
+    Actors:
+    User: The person interacting with the program.
+    System: The program.
+
+    Preconditions:
+    The system is running, and the user is navigating through the menu.
+
+    Steps:
+    1- The user selects the option to display current players via the menu.
+    2- The program iterates through the roles in the Mannschaft.
+    3- The system prints for each role:
+        - If a player exists, the system display their details.
+        - If no player exists for a role, the system displays "Kein Spieler mit dieser Position vorhanden."
+
+    Postconditions:
+    The user is provided with a full overview of the current team, including any unfilled roles.
+
+    Sequence diagram: M2TaskB.puml

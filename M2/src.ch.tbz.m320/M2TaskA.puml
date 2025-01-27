@@ -1,0 +1,11 @@
+@startuml
+actor User
+actor System
+
+User -> System : Select option to add a Goalie
+System -> User : Display input fields
+User -> System : Input Goalie's name and height
+System -> System : Create new Goalie instance
+System -> System : Assign Goalie to Mannschaft
+System -> User : Confirmation message
+@enduml
