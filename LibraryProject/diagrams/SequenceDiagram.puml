@@ -1,0 +1,27 @@
+@startuml
+actor Member
+participant LibraryOperations
+participant Library
+participant Media
+participant Member as Borrower
+
+Member -> LibraryOperations: borrowMedia()
+LibraryOperations -> Library: findMediaByName(title)
+Library -> Media: (search by title)
+alt Media found
+    Library -> LibraryOperations: return Media
+    LibraryOperations -> Library: findMemberByName(name)
+    Library -> Borrower: (search by name)
+    alt Member found
+        Library -> LibraryOperations: return Member
+        LibraryOperations -> Borrower: borrowMedia(Media)
+        Borrower -> Media: borrow(memberId)
+        Media -> Borrower: Media borrowed
+        LibraryOperations -> Member: success!
+    else Member not found
+        LibraryOperations -> Member: throw MemberException
+    end
+else Media not found
+    LibraryOperations -> Member: throw MediaAvailabilityException
+end
+@enduml
