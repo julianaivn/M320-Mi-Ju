@@ -20,13 +20,13 @@ public class Start {
                         System.out.println("""
                                 options:
                                 - see media
-                                - see members
-                                - create media
-                                - create member
                                 - borrow media
                                 - return media
                                 - delete media
+                                - create media
+                                - see members
                                 - delete member
+                                - create member
                                 """);
                         break;
                     }
