@@ -11,6 +11,17 @@ public class Book extends Media{
         this.author = author;
     }
 
+    public Book(){
+        super();
+    }
+
+    @Override
+    public String toString() {
+        return "Book\n" +
+                super.toString() +
+                "author='" + author;
+    }
+
     public String getAuthor() {
         return author;
     }

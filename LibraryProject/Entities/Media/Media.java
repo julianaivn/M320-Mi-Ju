@@ -20,6 +20,11 @@ public class Media implements Borrowable{
         this.borrowedSince = borrowedSince;
         this.borrowedById = borrowedById;
     }
+    public Media(){
+        this.isAvailable = true;
+        this.borrowedSince = null;
+        this.borrowedById = null;
+    }
 
     public void borrow(String memberId) throws MediaAvailabilityException {
         if(isAvailable){
@@ -34,6 +39,21 @@ public class Media implements Borrowable{
             borrowedSince = null;
         } else throw new MediaAvailabilityException("Media isn't borrowed");
     };
+
+    @Override
+    public String toString() {
+        if(isAvailable){
+            return "mediaID: " + mediaID + '\n' +
+                    "title: " + title + '\n' +
+                    "isAvailable: " + isAvailable + '\n';
+        } else {
+            return "mediaID: '" + mediaID + '\n' +
+                    "title: " + title + '\n' +
+                    "isAvailable: " + isAvailable + '\n' +
+                    "borrowedSince: " + borrowedSince + '\n' +
+                    "borrowedById: " + borrowedById + '\n';
+        }
+    }
 
     public String getMediaID() {
         return mediaID;

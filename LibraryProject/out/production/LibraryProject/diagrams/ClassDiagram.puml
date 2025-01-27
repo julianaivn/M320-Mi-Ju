@@ -1,0 +1,57 @@
+@startuml
+title Library Management System - Class Diagram
+
+class Library {
+    - books : List<Book>
+    - members : List<Member>
+    + addBook(book: Book) : void
+    + deleteBook(bookId: String) : void
+    + addMember(member: Member) : void
+    + deleteMember(memberId: String) : void
+    + borrowBook(memberId: String, bookId: String) : void
+    + returnBook(memberId: String, bookId: String) : void
+}
+
+class Book {
+    - id : String
+    - title : String
+    - author : String
+    - isAvailable : boolean
+    + markBorrowed() : void
+    + markReturned() : void
+}
+
+class Person {
+    - name : String
+    - id : String
+}
+
+class Member {
+    - borrowedBooks : List<Book>
+    + borrowBook(book: Book) : void
+    + returnBook(book: Book) : void
+}
+
+class LibraryOperations {
+    + addBook(book: Book) : void
+    + deleteBook(bookId: String) : void
+    + addMember(member: Member) : void
+    + deleteMember(memberId: String) : void
+}
+
+class CustomException {
+    + CustomException(message: String)
+}
+
+interface LibraryOperations
+
+Library o-- Book
+Library o-- Member
+Library ..> LibraryOperations
+Member --> Book
+Member --|> Person
+CustomException <|-- BookNotAvailableException
+CustomException <|-- MemberNotFoundException
+
+@enduml
+

@@ -1,0 +1,64 @@
+@startuml
+
+interface Orderable {
+  +getOrderDetails(): String
+}
+
+interface CustomizableItem {
+  +addCustomization(customization: Customization): void
+  +getCustomizations(): List<Customization>
+}
+
+abstract class Payment {
+  +processPayment(): void
+}
+
+class Customization {
+  -type: String
+  -value: String
+  +getDetails(): String
+}
+
+enum Size {
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+class CoffeeProduct implements CustomizableItem {
+  -name: String
+  -price: double
+  -size: Size
+  -customizations: List<Customization>
+  +getProductDetails(): String
+  +addCustomization(customization: Customization): void
+}
+
+class CoffeeOrder implements Orderable {
+  -products: List<CoffeeProduct>
+  -quantity: int
+  -payment: Payment
+  +getOrderDetails(): String
+  +addProduct(product: CoffeeProduct, quantity: int): void
+  +priceOrder(double)
+  +finalizeOrder(): void
+}
+
+class CreditCardPayment extends Payment {
+  +processPayment(): void
+}
+
+class Postfinanz extends Payment {
+  +processPayment(): void
+}
+
+class DebitCardPayment extends Payment {
+  +processPayment(): void
+}
+
+Customization --> CustomizableItem : "1..* (HAS)"
+CoffeeProduct --> Size : "1..1 (HAS)"
+CoffeeOrder --> CoffeeProduct : "HAS (1..*)"
+CoffeeOrder --> Payment : "1..1 (HAS)"
+
+@enduml
