@@ -1,0 +1,115 @@
+@startuml
+package Entities.Media {
+    class Media {
+        - mediaID: String
+        - title: String
+        - isAvailable: boolean
+        - borrowedSince: LocalDate
+        - borrowedById: String
+        + Media()
+        + Media(mediaID: String, title: String, isAvailable: boolean, borrowedSince: LocalDate, borrowedById: String)
+        + borrow(memberId: String): void
+        + returnItem(): void
+        + getMediaID(): String
+        + setMediaID(mediaID: String): void
+        + getTitle(): String
+        + setTitle(title: String): void
+        + isAvailable(): boolean
+        + setAvailable(available: boolean): void
+        + getBorrowedSince(): LocalDate
+        + setBorrowedSince(borrowedSince: LocalDate): void
+        + getBorrowedById(): String
+        + setBorrowedById(borrowedById: String): void
+    }
+
+    interface Borrowable {
+        + borrow(memberId: String): void
+        + returnItem(): void
+    }
+
+    class Book extends Media {
+        - author: String
+        + Book()
+        + Book(mediaID: String, title: String, isAvailable: boolean, borrowedSince: LocalDate, borrowedById: String, author: String)
+        + getAuthor(): String
+        + setAuthor(author: String): void
+    }
+
+    class Movie extends Media {
+        - duration: int
+        + Movie()
+        + Movie(mediaID: String, title: String, isAvailable: boolean, borrowedSince: LocalDate, borrowedById: String, duration: int)
+        + getDuration(): int
+        + setDuration(duration: int): void
+    }
+}
+
+package Entities {
+    class Member {
+        - name: String
+        - id: String
+        - borrowedMedia: List<Media>
+        + Member(name: String, id: String)
+        + Member(id: String)
+        + borrowMedia(media: Media): void
+        + returnMedia(media: Media): void
+        + getBorrowedMedia(): List<Media>
+        + getId(): String
+        + setId(id: String): void
+        + getName(): String
+        + setName(name: String): void
+    }
+
+    class Library {
+        - instance: Library
+        - medias: List<Media>
+        - members: List<Member>
+        + Library()
+        + getInstance(): Library
+        + addMedia(media: Media): void
+        + deleteMedia(Id: String): void
+        + addMember(member: Member): void
+        + deleteMember(memberId: String): void
+        + getMedias(): List<Media>
+        + setMedias(medias: List<Media>): void
+        + getMembers(): List<Member>
+        + setMembers(members: List<Member>): void
+    }
+}
+
+package Exceptions {
+    class CustomException {
+        + CustomException(message: String)
+    }
+
+    class MediaAvailabilityException extends CustomException {
+        + MediaAvailabilityException(message: String)
+    }
+
+    class MemberException extends CustomException {
+        + MemberException(message: String)
+    }
+}
+
+class LibraryOperations {
+    - library: Library
+    + LibraryOperations()
+    + createMedia(): void
+    + createMember(): void
+    + borrowMedia(): void
+    + returnMedia(): void
+    + deleteMedia(): void
+    + deleteMember(): void
+    + seeAllMedia(): void
+    + seeAllMembers(): void
+    + setDefaultData(): void
+}
+
+LibraryOperations --> Library
+Library --> Media
+Library --> Member
+Member --> Media
+Book ..|> Media
+Movie ..|> Media
+Media ..|> Borrowable
+@enduml
