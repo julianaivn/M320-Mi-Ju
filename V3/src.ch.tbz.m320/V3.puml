@@ -1,0 +1,39 @@
+@startuml
+interface IWeaponBehavior {
+    + useWeapon() : void
+}
+
+class AxeBehavior{
+    + useWeapon() : void
+}
+
+class StaffBehavior{
+    + useWeapon() : void
+}
+
+class DaggerBehavior{
+    + useWeapon() : void
+}
+
+abstract class Character {
+    - characterName : String
+    - weaponBehavior : IWeaponBehavior
+    + setWeaponBehavior(weaponBehavior : IWeaponBehavior) : void
+    + fight() : void
+}
+
+class Warrior{
+    + Warrior()
+}
+
+class Mage{
+    + Mage()
+}
+
+Character o--> IWeaponBehavior : "delegates"
+IWeaponBehavior <|.. AxeBehavior
+IWeaponBehavior <|.. StaffBehavior
+IWeaponBehavior <|.. DaggerBehavior
+Character <|-- Warrior
+Character <|-- Mage
+@enduml
