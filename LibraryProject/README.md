@@ -1,6 +1,6 @@
 Our project
 
-Our project consist in a virtual library or a library system where we can organize and check everything related to
+our project represents a digital library system where we can organize and check everything related to
 the library. In our case we decided to use members that can borrow and return books and at the end, we ended up adding 
 movies too. The system displayed here would be what an admin or a librarian would use since it has access to create
 and delete not only members but media.
