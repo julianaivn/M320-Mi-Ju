@@ -1,29 +1,32 @@
 package Entities;
 
+import Entities.Media.Media;
+import Exceptions.MediaAvailabilityException;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Member extends Person {
-    private List<Book> borrowedBooks;
+    private List<Media> borrowedMedia;
 
     public Member(String name, String id) {
         super(name, id);
-        borrowedBooks = new ArrayList<>();
+        borrowedMedia = new ArrayList<>();
     }
 
-    public List<Book> getBorrowedBooks() {
-        return borrowedBooks;
+    public List<Media> getBorrowedMedia() {
+        return borrowedMedia;
     }
 
-    public void borrowBook(Book book) {
-        borrowedBooks.add(book);
-        book.markBorrowed();
-        System.out.println(getName() + " borrowed: " + book.getTitle());
+    public void borrowMedia(Media media) throws MediaAvailabilityException {
+        borrowedMedia.add(media);
+        media.borrow(this.getId());
+        System.out.println(getName() + " borrowed: " + media.getTitle());
     }
 
-    public void returnBook(Book book) {
-        borrowedBooks.remove(book);
-        book.markReturned();
-        System.out.println(getName() + " returned: " + book.getTitle());
+    public void returnMedia(Media media) throws MediaAvailabilityException {
+        borrowedMedia.remove(media);
+        media.returnItem();
+        System.out.println(getName() + " returned: " + media.getTitle());
     }
 }
