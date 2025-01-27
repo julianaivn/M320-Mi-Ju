@@ -9,18 +9,14 @@ import java.util.Optional;
 import java.util.ArrayList;
 import java.util.List;
 
-class Library {
-    private static Library instance; // Singleton instance
+public class Library {
+    public static Library instance; // Singleton instance
     private List<Media> medias;
     private List<Member> members;
 
-    private Library() {
+    public Library() {
         this.medias = new ArrayList<>();
         this.members = new ArrayList<>();
-    }
-    private Library(ArrayList<Media> media, ArrayList<Member> members) {
-        this.medias = media;
-        this.members = members;
     }
 
     // Singleton Pattern
@@ -54,33 +50,20 @@ class Library {
         System.out.println("Member deleted with ID: " + memberId);
     }
 
-    public void borrowMedia(String memberId, String mediaId) throws MediaAvailabilityException, MemberException {
-        Member member = findMemberById(memberId);
-        Media media = findMediaById(mediaId);
 
-        if (!media.isAvailable()) {
-            throw new MediaAvailabilityException("Media with ID " + mediaId + " is not available.");
-        }
-
-        member.borrowMedia(media);
+    public List<Media> getMedias() {
+        return medias;
     }
 
-    public void returnMedia(String memberId, String mediaId) throws MemberException, MediaAvailabilityException {
-        Member member = findMemberById(memberId);
-        Media media = findMediaById(mediaId);
-
-        member.returnMedia(media);
+    public void setMedias(List<Media> medias) {
+        this.medias = medias;
     }
 
-    private Member findMemberById(String memberId) throws MemberException {
-        Optional<Member> member = members.stream().filter(m -> m.getId().equals(memberId)).findFirst();
-        if (member.isEmpty()) {
-            throw new MemberException("Member with ID " + memberId + " not found.");
-        }
-        return member.get();
+    public List<Member> getMembers() {
+        return members;
     }
 
-    private Media findMediaById(String mediaId) {
-        return medias.stream().filter(media -> media.getMediaID().equals(mediaId)).findFirst().orElse(null);
+    public void setMembers(List<Member> members) {
+        this.members = members;
     }
 }
